@@ -2,7 +2,7 @@ package org.ligboy.mweather.api;
 
 
 import org.ligboy.mweather.model.ForecastResult;
-import org.ligboy.mweather.model.RealtimeResult;
+import org.ligboy.mweather.model.RealTimeResult;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -19,7 +19,7 @@ public interface ColorCloudApi {
                                   @Path("lonlat") String lonlat);
 
     @GET("http://api.caiyunapp.com/v2/{token}/{lonlat}/realtime")
-    Call<RealtimeResult> realtime(@Path("token") String token, @Query("lang") String language,
+    Call<RealTimeResult> realtime(@Path("token") String token, @Query("lang") String language,
                                   @Path("lonlat") String lonlat);
 
 

@@ -1,4 +1,4 @@
-package org.ligboy.mweather.model.real;
+package org.ligboy.mweather.model.realtime;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -13,20 +13,20 @@ public class LocalPrecipitation implements Parcelable {
     @SerializedName("intensity")
     public float intensity;
     @SerializedName("datasource")
-    public float datasource;
+    public String datasource;
 
     public LocalPrecipitation() {
     }
 
     protected LocalPrecipitation(Parcel in) {
         intensity = in.readFloat();
-        datasource = in.readFloat();
+        datasource = in.readString();
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeFloat(intensity);
-        dest.writeFloat(datasource);
+        dest.writeString(datasource);
     }
 
     @Override

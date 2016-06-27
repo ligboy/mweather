@@ -5,14 +5,14 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
-import org.ligboy.mweather.model.real.Realtime;
+import org.ligboy.mweather.model.realtime.RealTime;
 
 import java.util.Date;
 
 /**
  * @author Ligboy Liu ligboy@gmail.com
  */
-public class RealtimeResult extends BaseResult implements Parcelable {
+public class RealTimeResult extends BaseResult implements Parcelable {
 
     @SerializedName("lang")
     public String language;
@@ -25,12 +25,12 @@ public class RealtimeResult extends BaseResult implements Parcelable {
     @SerializedName("unit")
     public String unit;
     @SerializedName("result")
-    public Realtime result;
+    public RealTime result;
 
-    public RealtimeResult() {
+    public RealTimeResult() {
     }
 
-    protected RealtimeResult(Parcel in) {
+    protected RealTimeResult(Parcel in) {
         super(in);
         language = in.readString();
         long time = in.readLong();
@@ -38,7 +38,7 @@ public class RealtimeResult extends BaseResult implements Parcelable {
         tzShift = in.readInt();
         location = in.createDoubleArray();
         unit = in.readString();
-        result = in.readParcelable(Realtime.class.getClassLoader());
+        result = in.readParcelable(RealTime.class.getClassLoader());
     }
 
     @Override
@@ -57,15 +57,15 @@ public class RealtimeResult extends BaseResult implements Parcelable {
         return 0;
     }
 
-    public static final Creator<RealtimeResult> CREATOR = new Creator<RealtimeResult>() {
+    public static final Creator<RealTimeResult> CREATOR = new Creator<RealTimeResult>() {
         @Override
-        public RealtimeResult createFromParcel(Parcel in) {
-            return new RealtimeResult(in);
+        public RealTimeResult createFromParcel(Parcel in) {
+            return new RealTimeResult(in);
         }
 
         @Override
-        public RealtimeResult[] newArray(int size) {
-            return new RealtimeResult[size];
+        public RealTimeResult[] newArray(int size) {
+            return new RealTimeResult[size];
         }
     };
 }

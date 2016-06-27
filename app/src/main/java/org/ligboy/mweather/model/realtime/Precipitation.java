@@ -1,4 +1,4 @@
-package org.ligboy.mweather.model.real;
+package org.ligboy.mweather.model.realtime;
 
 import android.os.Parcel;
 import android.os.Parcelable;

@@ -1,56 +1,59 @@
-package org.ligboy.mweather.model.real;
+package org.ligboy.mweather.model.realtime;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
-import org.ligboy.mweather.model.real.Precipitation;
-
 /**
  * @author Ligboy Liu ligboy@gmail.com
  */
-public class Realtime implements Parcelable {
+public class RealTime implements Parcelable {
     @SerializedName("temperature")
     public float temperature;
 
     @SerializedName("skycon")
-    public float skyCondition;
+    public String skyCondition;
 
     @SerializedName("cloudrate")
     public float cloudRate;
 
     @SerializedName("aqi")
-    public float airQualityIndex;
+    public int airQualityIndex;
 
     @SerializedName("humidity")
     public float humidity;
 
     @SerializedName("pm25")
-    public float pm25;
+    public int pm25;
 
     @SerializedName("precipitation")
     public Precipitation precipitation;
 
-    protected Realtime(Parcel in) {
+    @SerializedName("wind")
+    public Wind wind;
+
+    protected RealTime(Parcel in) {
         temperature = in.readFloat();
-        skyCondition = in.readFloat();
+        skyCondition = in.readString();
         cloudRate = in.readFloat();
-        airQualityIndex = in.readFloat();
+        airQualityIndex = in.readInt();
         humidity = in.readFloat();
-        pm25 = in.readFloat();
+        pm25 = in.readInt();
         precipitation = in.readParcelable(Precipitation.class.getClassLoader());
+        wind = in.readParcelable(Wind.class.getClassLoader());
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeFloat(temperature);
-        dest.writeFloat(skyCondition);
+        dest.writeString(skyCondition);
         dest.writeFloat(cloudRate);
-        dest.writeFloat(airQualityIndex);
+        dest.writeInt(airQualityIndex);
         dest.writeFloat(humidity);
-        dest.writeFloat(pm25);
+        dest.writeInt(pm25);
         dest.writeParcelable(precipitation, flags);
+        dest.writeParcelable(wind, flags);
     }
 
     @Override
@@ -58,15 +61,15 @@ public class Realtime implements Parcelable {
         return 0;
     }
 
-    public static final Creator<Realtime> CREATOR = new Creator<Realtime>() {
+    public static final Creator<RealTime> CREATOR = new Creator<RealTime>() {
         @Override
-        public Realtime createFromParcel(Parcel in) {
-            return new Realtime(in);
+        public RealTime createFromParcel(Parcel in) {
+            return new RealTime(in);
         }
 
         @Override
-        public Realtime[] newArray(int size) {
-            return new Realtime[size];
+        public RealTime[] newArray(int size) {
+            return new RealTime[size];
         }
     };
 }
