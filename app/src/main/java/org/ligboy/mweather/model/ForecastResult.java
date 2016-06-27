@@ -7,24 +7,17 @@ import com.google.gson.annotations.SerializedName;
 
 import org.ligboy.mweather.model.forecast.Forecast;
 
-import java.util.Date;
-
 /**
  * @author Ligboy Liu ligboy@gmail.com
  */
 public class ForecastResult extends BaseResult implements Parcelable {
-    @SerializedName("lang")
-    public String language;
-    @SerializedName("server_time")
-    public Date serverTime;
+
     @SerializedName("api_status")
     public String apiStatus;
     @SerializedName("tzshift")
     public int tzShift;
     @SerializedName("version")
     public String version;
-    @SerializedName("location")
-    public double[] location;
     @SerializedName("unit")
     public String unit;
     @SerializedName("result")
@@ -32,11 +25,9 @@ public class ForecastResult extends BaseResult implements Parcelable {
 
     protected ForecastResult(Parcel in) {
         super(in);
-        language = in.readString();
         apiStatus = in.readString();
         tzShift = in.readInt();
         version = in.readString();
-        location = in.createDoubleArray();
         unit = in.readString();
         result = in.readParcelable(Forecast.class.getClassLoader());
     }
@@ -44,11 +35,9 @@ public class ForecastResult extends BaseResult implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         super.writeToParcel(dest, flags);
-        dest.writeString(language);
         dest.writeString(apiStatus);
         dest.writeInt(tzShift);
         dest.writeString(version);
-        dest.writeDoubleArray(location);
         dest.writeString(unit);
         dest.writeParcelable(result, flags);
     }
