@@ -6,4 +6,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="launchscreens_company_logo_bottom">48.0dip</dimen>
+    <dimen name="launchscreens_product_logo_bottom">16.0dip</dimen>
 </resources>

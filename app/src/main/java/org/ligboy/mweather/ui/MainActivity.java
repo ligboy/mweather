@@ -1,4 +1,4 @@
-package org.ligboy.mweather;
+package org.ligboy.mweather.ui;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -14,6 +14,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import com.crashlytics.android.Crashlytics;
 import com.optimizely.Optimizely;
+
+import org.ligboy.mweather.R;
+
 import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity
