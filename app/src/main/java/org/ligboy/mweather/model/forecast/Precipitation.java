@@ -5,8 +5,7 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
-
-import java.util.Date;
+import org.ligboy.mweather.api.util.CyDate;
 
 /**
  * @author Ligboy Liu ligboy@gmail.com
@@ -17,7 +16,7 @@ public class Precipitation implements Parcelable {
     public float value;
 
     @SerializedName("datetime")
-    public Date datetime;
+    public CyDate datetime;
 
     public Precipitation() {
     }
@@ -25,7 +24,7 @@ public class Precipitation implements Parcelable {
     protected Precipitation(Parcel in) {
         value = in.readFloat();
         long time = in.readLong();
-        datetime = time != Long.MIN_VALUE ? new Date(time) : null;
+        datetime = time != Long.MIN_VALUE ? new CyDate(time) : null;
     }
 
     @Override

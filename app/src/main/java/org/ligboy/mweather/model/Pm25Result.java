@@ -5,8 +5,6 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.Date;
-
 /**
  * @author Ligboy.Liu ligboy@gmail.com.
  */
@@ -22,7 +20,7 @@ public class Pm25Result implements Parcelable {
     @SerializedName("source")
     public String source;
     @SerializedName("time")
-    public Date time;
+    public long time;
     @SerializedName("aqi")
     public int api;
     @SerializedName("desc")
@@ -36,6 +34,7 @@ public class Pm25Result implements Parcelable {
         stid = in.readString();
         pm25 = in.readInt();
         source = in.readString();
+        time = in.readLong();
         api = in.readInt();
         desc = in.readString();
     }
@@ -46,6 +45,7 @@ public class Pm25Result implements Parcelable {
         dest.writeString(stid);
         dest.writeInt(pm25);
         dest.writeString(source);
+        dest.writeLong(time);
         dest.writeInt(api);
         dest.writeString(desc);
     }

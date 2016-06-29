@@ -9,7 +9,6 @@ import org.ligboy.mweather.model.RadarImage;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * @author Ligboy.Liu ligboy@gmail.com.
@@ -28,11 +27,7 @@ public class RadarImageTypeAdapter extends TypeAdapter<RadarImage> {
             } else {
                 out.nullValue();
             }
-            if (value.datetime != null) {
-                out.value(value.datetime.getTime());
-            } else {
-                out.nullValue();
-            }
+            out.value(value.datetime);
             if (value.lonlats != null && value.lonlats.length > 0) {
                 out.beginArray();
                 for (double lonlat : value.lonlats) {
@@ -40,8 +35,8 @@ public class RadarImageTypeAdapter extends TypeAdapter<RadarImage> {
                 }
                 out.endArray();
             }
-            out.endArray();
         }
+        out.endArray();
     }
 
     @Override
@@ -52,8 +47,7 @@ public class RadarImageTypeAdapter extends TypeAdapter<RadarImage> {
         JsonToken dateToken = in.peek();
         switch (dateToken) {
             case NUMBER:
-                long time = in.nextLong();
-                radarImage.datetime = new Date(time);
+                radarImage.datetime = in.nextLong();
                 break;
         }
         JsonToken lonlatsToken = in.peek();
@@ -72,6 +66,6 @@ public class RadarImageTypeAdapter extends TypeAdapter<RadarImage> {
             in.endArray();
         }
         in.endArray();
-        return null;
+        return radarImage;
     }
 }

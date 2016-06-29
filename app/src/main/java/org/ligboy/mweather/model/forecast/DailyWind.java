@@ -5,8 +5,7 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
-
-import java.util.Date;
+import org.ligboy.mweather.api.util.CyDate;
 
 /**
  * @author Ligboy Liu ligboy@gmail.com
@@ -19,7 +18,7 @@ public class DailyWind implements Parcelable {
     @SerializedName("min")
     public Wind min;
     @SerializedName("date")
-    public Date date;
+    public CyDate date;
 
     public DailyWind() {
     }
@@ -29,7 +28,7 @@ public class DailyWind implements Parcelable {
         avg = in.readParcelable(Wind.class.getClassLoader());
         min = in.readParcelable(Wind.class.getClassLoader());
         long time = in.readLong();
-        date = time != Long.MIN_VALUE ? new Date(time) : null;
+        date = time != Long.MIN_VALUE ? new CyDate(time) : null;
     }
 
     @Override

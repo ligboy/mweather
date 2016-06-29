@@ -8,7 +8,7 @@ import com.google.gson.GsonBuilder;
 
 import org.ligboy.library.stetho.StethoOkHttp3Interceptor;
 import org.ligboy.mweather.BuildConfig;
-import org.ligboy.mweather.api.deserializer.MyTypeAdaterFactory;
+import org.ligboy.mweather.api.deserializer.MyTypeAdapterFactory;
 
 import java.io.File;
 
@@ -53,7 +53,7 @@ public class RetrofitManager {
         }
 
         GsonBuilder gsonBuilder = new GsonBuilder()
-                .registerTypeAdapterFactory(MyTypeAdaterFactory.INSTANCE);
+                .registerTypeAdapterFactory(MyTypeAdapterFactory.INSTANCE);
         RETROFIT_BUILDER = new Retrofit.Builder()
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(gsonBuilder.create()));

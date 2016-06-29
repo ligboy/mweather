@@ -5,14 +5,14 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.Date;
+import org.ligboy.mweather.api.util.CyDate;
 
 /**
  * @author Ligboy Liu ligboy@gmail.com
  */
 public class Astro implements Parcelable {
     @SerializedName("date")
-    public Date date;
+    public CyDate date;
     @SerializedName("sunset")
     public SunTime sunset;
     @SerializedName("sunrise")
@@ -23,7 +23,7 @@ public class Astro implements Parcelable {
 
     protected Astro(Parcel in) {
         long date = in.readLong();
-        this.date = date != Long.MIN_VALUE ? new Date(date) : null;
+        this.date = date != Long.MIN_VALUE ? new CyDate(date) : null;
         sunset = in.readParcelable(SunTime.class.getClassLoader());
         sunrise = in.readParcelable(SunTime.class.getClassLoader());
     }

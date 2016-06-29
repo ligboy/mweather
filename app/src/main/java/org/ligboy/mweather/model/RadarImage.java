@@ -3,8 +3,6 @@ package org.ligboy.mweather.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.util.Date;
-
 /**
  * @author Ligboy.Liu ligboy@gmail.com.
  */
@@ -13,7 +11,7 @@ public class RadarImage implements Parcelable {
 
     public String image;
 
-    public Date datetime;
+    public long datetime;
 
     public double[] lonlats;
 
@@ -22,15 +20,14 @@ public class RadarImage implements Parcelable {
 
     protected RadarImage(Parcel in) {
         image = in.readString();
-        long time = in.readLong();
-        datetime = time != Long.MIN_VALUE ? new Date(time) : null;
+        datetime = in.readLong();
         lonlats = in.createDoubleArray();
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(image);
-        dest.writeLong(datetime != null ? datetime.getTime() : Long.MIN_VALUE);
+        dest.writeLong(datetime);
         dest.writeDoubleArray(lonlats);
     }
 

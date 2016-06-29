@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.Date;
+import org.ligboy.mweather.api.util.CyDate;
 
 /**
  * @author Ligboy Liu ligboy@gmail.com
@@ -16,7 +16,7 @@ public class CloudRate implements Parcelable {
     public float value;
 
     @SerializedName("datetime")
-    public Date datetime;
+    public CyDate datetime;
 
     public CloudRate() {
     }
@@ -24,7 +24,7 @@ public class CloudRate implements Parcelable {
     protected CloudRate(Parcel in) {
         value = in.readFloat();
         long time = in.readLong();
-        datetime = time != Long.MIN_VALUE ? new Date(time) : null;
+        datetime = time != Long.MIN_VALUE ? new CyDate(time) : null;
     }
 
     @Override

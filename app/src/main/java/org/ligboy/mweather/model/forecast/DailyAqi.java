@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.Date;
+import org.ligboy.mweather.api.util.CyDate;
 
 /**
  * @author Ligboy Liu ligboy@gmail.com
@@ -18,7 +18,7 @@ public class DailyAqi implements Parcelable {
     @SerializedName("min")
     public int min;
     @SerializedName("date")
-    public Date date;
+    public CyDate date;
 
     public DailyAqi() {
     }
@@ -28,7 +28,7 @@ public class DailyAqi implements Parcelable {
         avg = in.readFloat();
         min = in.readInt();
         long time = in.readLong();
-        date = time != Long.MIN_VALUE ? new Date(time) : null;
+        date = time != Long.MIN_VALUE ? new CyDate(time) : null;
     }
 
     @Override

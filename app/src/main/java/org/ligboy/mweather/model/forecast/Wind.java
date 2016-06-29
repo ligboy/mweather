@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.Date;
+import org.ligboy.mweather.api.util.CyDate;
 
 /**
  * Wind
@@ -17,7 +17,7 @@ public class Wind implements Parcelable {
     @SerializedName("speed")
     public float speed;
     @SerializedName("datetime")
-    public Date datetime;
+    public CyDate datetime;
 
 
     public Wind() {
@@ -32,7 +32,7 @@ public class Wind implements Parcelable {
         direction = in.readFloat();
         speed = in.readFloat();
         long time = in.readLong();
-        datetime = time != Long.MIN_VALUE ? new Date(time) : null;
+        datetime = time != Long.MIN_VALUE ? new CyDate(time) : null;
     }
 
     public static final Creator<Wind> CREATOR = new Creator<Wind>() {

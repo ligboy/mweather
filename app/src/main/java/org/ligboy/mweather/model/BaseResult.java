@@ -5,8 +5,6 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.Date;
-
 /**
  * @author Ligboy.Liu ligboy@gmail.com.
  */
@@ -17,7 +15,7 @@ public class BaseResult implements Parcelable {
     @SerializedName("lang")
     public String language;
     @SerializedName("server_time")
-    public Date serverTime;
+    public long serverTime;
     @SerializedName("location")
     public double[] location;
 
@@ -27,8 +25,7 @@ public class BaseResult implements Parcelable {
     protected BaseResult(Parcel in) {
         status = in.readString();
         language = in.readString();
-        long time = in.readLong();
-        serverTime = time != Long.MIN_VALUE ? new Date(time) : null;
+        serverTime = in.readLong();
         location = in.createDoubleArray();
     }
 
@@ -36,7 +33,7 @@ public class BaseResult implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(status);
         dest.writeString(language);
-        dest.writeLong(serverTime != null ? serverTime.getTime() : Long.MIN_VALUE);
+        dest.writeLong(serverTime);
         dest.writeDoubleArray(location);
     }
 

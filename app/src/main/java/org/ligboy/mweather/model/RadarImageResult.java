@@ -17,6 +17,9 @@ public class RadarImageResult implements Parcelable {
     @SerializedName("radar_img")
     public RadarImage[] radarImages;
 
+    public RadarImageResult() {
+    }
+
     protected RadarImageResult(Parcel in) {
         status = in.readString();
         radarImages = in.createTypedArray(RadarImage.CREATOR);

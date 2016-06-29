@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.Date;
+import org.ligboy.mweather.api.util.CyDate;
 
 /**
  * @author Ligboy Liu ligboy@gmail.com
@@ -17,7 +17,7 @@ public class CarWashing implements Parcelable {
     @SerializedName("desc")
     public String desc;
     @SerializedName("datetime")
-    public Date datetime;
+    public CyDate datetime;
 
     public CarWashing() {
     }
@@ -26,7 +26,7 @@ public class CarWashing implements Parcelable {
         index = in.readString();
         desc = in.readString();
         long date = in.readLong();
-        datetime = date != Long.MIN_VALUE ? new Date(date) : null;
+        datetime = date != Long.MIN_VALUE ? new CyDate(date) : null;
     }
 
     public static final Creator<CarWashing> CREATOR = new Creator<CarWashing>() {

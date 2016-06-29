@@ -23,7 +23,7 @@ public interface CaiyunV2Api {
                                   @Nullable @Query("lang") String language);
 
     @GET("/v2/{token}/{lonlat}/realtime")
-    Call<RealTimeResult> realtime(@Path("token") String token, @Path("lonlat") String lonlat,
+    Call<RealTimeResult> realTime(@Path("token") String token, @Path("lonlat") String lonlat,
                                   @Nullable @Query("lang") String language);
 
     @GET("/v2/geoentry/{lang}/{lonlat}")

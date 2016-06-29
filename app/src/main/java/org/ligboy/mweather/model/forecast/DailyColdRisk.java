@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.Date;
+import org.ligboy.mweather.api.util.CyDate;
 
 /**
  * @author Ligboy Liu ligboy@gmail.com
@@ -17,7 +17,7 @@ public class DailyColdRisk implements Parcelable {
     @SerializedName("desc")
     public String desc;
     @SerializedName("datetime")
-    public Date datetime;
+    public CyDate datetime;
 
     public DailyColdRisk() {
     }
@@ -26,7 +26,7 @@ public class DailyColdRisk implements Parcelable {
         index = in.readInt();
         desc = in.readString();
         long time = in.readLong();
-        datetime = time != Long.MIN_VALUE ? new Date(time) : null;
+        datetime = time != Long.MIN_VALUE ? new CyDate(time) : null;
     }
 
     @Override
