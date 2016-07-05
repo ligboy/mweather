@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.MainActivity"
+        tools:background="?attr/colorPrimary">
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/updateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/top_layout"
+            android:textSize="16sp"
+            android:textColor="?android:attr/textColorSecondaryInverse"
+            tools:text="July 11, 15:47"
+            app:layout_constraintTop_toTopOf="@+id/top_layout"
+            android:layout_marginTop="16dp"
+            app:layout_constraintRight_toRightOf="@+id/top_layout"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            tools:text="33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/temperature"
+            android:textSize="72sp"
+            android:textColor="?android:attr/textColorPrimaryInverse"
+            app:layout_constraintLeft_toLeftOf="@+id/top_layout"
+            android:layout_marginLeft="32dp"
+            android:layout_marginStart="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/temperatureDay"
+            android:layout_marginTop="8dp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/temperatureUnit"
+            android:text="℃"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?android:attr/textColorPrimaryInverse"
+            tools:ignore="HardcodedText"
+            android:textSize="36sp"
+            app:layout_constraintLeft_toRightOf="@+id/temperature"
+            app:layout_constraintTop_toTopOf="@+id/temperature"
+            android:layout_marginTop="8dp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/temperatureDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?android:attr/textColorPrimaryInverse"
+            tools:text="Day 33°↑ ‧ Night 26°↓"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="@+id/temperature"
+            app:layout_constraintTop_toTopOf="@+id/top_layout"
+            android:layout_marginTop="16dp" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/forecastIndicator"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            tools:layout_width="72dp"
+            tools:layout_height="72dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/weather_rain_day"
+            app:layout_constraintCenterY_toCenterY="@+id/temperature"
+            app:layout_constraintTop_toTopOf="@+id/temperature"
+            app:layout_constraintRight_toRightOf="@+id/top_layout"
+            android:layout_marginRight="32dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintBottom_toBottomOf="@+id/temperature" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/forecastLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?android:attr/textColorPrimaryInverse"
+            tools:text="Rain"
+            android:textSize="18sp"
+            app:layout_constraintCenterX_toCenterX="@+id/forecastIndicator"
+            app:layout_constraintLeft_toLeftOf="@+id/forecastIndicator"
+            app:layout_constraintTop_toBottomOf="@+id/temperature"
+            app:layout_constraintRight_toRightOf="@+id/forecastIndicator" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/humidityLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?android:attr/textColorPrimaryInverse"
+            tools:text="Humidity 100%"
+            android:textSize="16sp"
+            app:layout_constraintCenterX_toCenterX="@+id/temperature"
+            app:layout_constraintLeft_toLeftOf="@+id/temperature"
+            app:layout_constraintTop_toBottomOf="@+id/temperature"
+            app:layout_constraintRight_toRightOf="@+id/temperature" />
+    </android.support.constraint.ConstraintLayout>
+</merge>
