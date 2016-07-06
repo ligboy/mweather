@@ -100,7 +100,7 @@
             android:id="@+id/windIndicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_navigation_text_color_primary_24dp"
+            app:srcCompat="@drawable/ic_navigation_text_color_secondary_24dp"
             app:layout_constraintLeft_toLeftOf="@+id/top_layout"
             android:layout_marginLeft="32dp"
             android:layout_marginStart="32dp"
