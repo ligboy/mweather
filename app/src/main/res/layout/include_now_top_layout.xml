@@ -6,15 +6,14 @@
         android:id="@+id/top_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.MainActivity"
-        tools:background="?attr/colorPrimary">
+        tools:context=".ui.MainActivity">
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/updateTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="@id/top_layout"
             android:textSize="16sp"
-            android:textColor="?android:attr/textColorSecondaryInverse"
+            android:textColor="?android:attr/textColorSecondary"
             tools:text="July 11, 15:47"
             app:layout_constraintTop_toTopOf="@+id/top_layout"
             android:layout_marginTop="16dp"
@@ -28,7 +27,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/temperature"
             android:textSize="72sp"
-            android:textColor="?android:attr/textColorPrimaryInverse"
+            android:textColor="?android:attr/textColorPrimary"
             app:layout_constraintLeft_toLeftOf="@+id/top_layout"
             android:layout_marginLeft="32dp"
             android:layout_marginStart="32dp"
@@ -40,7 +39,7 @@
             android:text="℃"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="?android:attr/textColorPrimaryInverse"
+            android:textColor="?android:attr/textColorPrimary"
             tools:ignore="HardcodedText"
             android:textSize="36sp"
             app:layout_constraintLeft_toRightOf="@+id/temperature"
@@ -51,9 +50,9 @@
             android:id="@+id/temperatureDay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="?android:attr/textColorPrimaryInverse"
+            android:textColor="?android:attr/textColorPrimary"
             tools:text="Day 33°↑ ‧ Night 26°↓"
-            android:textSize="16sp"
+            android:textSize="14sp"
             app:layout_constraintLeft_toLeftOf="@+id/temperature"
             app:layout_constraintTop_toTopOf="@+id/top_layout"
             android:layout_marginTop="16dp" />
@@ -77,7 +76,7 @@
             android:id="@+id/forecastLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="?android:attr/textColorPrimaryInverse"
+            android:textColor="?android:attr/textColorPrimary"
             tools:text="Rain"
             android:textSize="18sp"
             app:layout_constraintCenterX_toCenterX="@+id/forecastIndicator"
@@ -89,12 +88,81 @@
             android:id="@+id/humidityLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="?android:attr/textColorPrimaryInverse"
+            android:textColor="?android:attr/textColorPrimary"
             tools:text="Humidity 100%"
-            android:textSize="16sp"
+            android:textSize="14sp"
             app:layout_constraintCenterX_toCenterX="@+id/temperature"
             app:layout_constraintLeft_toLeftOf="@+id/temperature"
             app:layout_constraintTop_toBottomOf="@+id/temperature"
             app:layout_constraintRight_toRightOf="@+id/temperature" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/windIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_navigation_text_color_primary_24dp"
+            app:layout_constraintLeft_toLeftOf="@+id/top_layout"
+            android:layout_marginLeft="32dp"
+            android:layout_marginStart="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/forecastLabel"
+            android:layout_marginTop="24dp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/windSpeedLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?android:attr/textColorPrimary"
+            tools:text="18km/h"
+            android:textSize="18sp"
+            app:layout_constraintCenterY_toCenterY="@+id/windIndicator"
+            app:layout_constraintLeft_toRightOf="@+id/windIndicator"
+            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp"
+            app:layout_constraintTop_toTopOf="@+id/windIndicator"
+            app:layout_constraintBottom_toBottomOf="@+id/windIndicator" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/windLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?android:attr/textColorPrimary"
+            tools:text="South Wind Level 3"
+            android:textSize="14sp"
+            app:layout_constraintCenterY_toCenterY="@+id/windIndicator"
+            app:layout_constraintLeft_toRightOf="@+id/windSpeedLabel"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toTopOf="@+id/windIndicator"
+            app:layout_constraintRight_toRightOf="@+id/top_layout"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/windIndicator"
+            app:layout_constraintHorizontal_bias="0.0" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/precipitationLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="?android:attr/textColorPrimary"
+            tools:text="Expect frizzles in another 18 minutes for 28 minutes.Expect frizzles in another 18 minutes for 28 minutes."
+            android:textSize="14sp"
+            app:layout_constraintCenterX_toCenterX="@+id/top_layout"
+            app:layout_constraintLeft_toLeftOf="@+id/top_layout"
+            android:layout_marginLeft="32dp"
+            android:layout_marginStart="32dp"
+            app:layout_constraintRight_toRightOf="@+id/top_layout"
+            android:layout_marginRight="32dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/precipitationChart"
+            android:layout_marginBottom="16dp" />
+
+        <com.db.chart.view.LineChartView
+            android:id="@+id/precipitationChart"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            app:layout_constraintLeft_toLeftOf="@+id/top_layout"
+            app:layout_constraintRight_toRightOf="@+id/top_layout"
+            app:layout_constraintBottom_toBottomOf="@+id/top_layout" />
+
     </android.support.constraint.ConstraintLayout>
 </merge>

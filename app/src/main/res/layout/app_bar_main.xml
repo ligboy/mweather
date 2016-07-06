@@ -23,7 +23,7 @@
             android:layout_gravity="center_horizontal|top"
             android:fitsSystemWindows="true"
             android:theme="@style/AppTheme.AppBarOverlay"
-            android:background="@color/material_teal_500"
+            android:background="?attr/colorPrimary"
             android:gravity="center_horizontal|top">
 
             <include layout="@layout/include_app_bar_main" />
@@ -39,16 +39,16 @@
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
         </android.support.design.widget.AppBarLayout>
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end|bottom"
-            android:layout_margin="@dimen/fab_margin"
-            app:fabSize="auto"
-            app:layout_anchor="@+id/viewPager"
-            app:layout_anchorGravity="bottom|right|end"
-            android:src="@drawable/ic_sync_white_24dp" />
+        <!--<android.support.design.widget.FloatingActionButton-->
+            <!--android:id="@+id/fab"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="end|bottom"-->
+            <!--android:layout_margin="@dimen/fab_margin"-->
+            <!--app:fabSize="auto"-->
+            <!--app:layout_anchor="@+id/viewPager"-->
+            <!--app:layout_anchorGravity="bottom|right|end"-->
+            <!--app:srcCompat="@drawable/ic_sync_white_24dp" />-->
 
     </android.support.design.widget.CoordinatorLayout>
 </merge>
