@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="account_type" translatable="false">org.ligboy.mweather.debug</string>
+    <string name="weather_provider_authorities" translatable="false">org.ligboy.mweather.debug.provider.weather</string>
+</resources>

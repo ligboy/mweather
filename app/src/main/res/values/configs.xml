@@ -3,4 +3,6 @@
     <string name="caiyun_api_base" translatable="false">https://api.caiyunapp.com/</string>
     <string name="caiyun_base" translatable="false">https://www.caiyunapp.com/</string>
     <string name="caiyun_token" translatable="false">Y2FpeXVuIGFuZHJpb2QgYXBp</string>
+    <string name="account_type" translatable="false">org.ligboy.mweather</string>
+    <string name="weather_provider_authorities" translatable="false">org.ligboy.mweather.provider.weather</string>
 </resources>

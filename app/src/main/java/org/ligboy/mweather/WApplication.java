@@ -10,6 +10,7 @@ import com.optimizely.Optimizely;
 import org.ligboy.library.stetho.StethoTree;
 import org.ligboy.library.stetho.StethoUtil;
 import org.ligboy.mweather.api.Api;
+import org.ligboy.mweather.util.AccountUtil;
 import org.ligboy.mweather.util.ConfigurationUtil;
 import org.ligboy.mweather.util.LocaleUtil;
 
@@ -39,11 +40,17 @@ public class WApplication extends Application {
             Timber.plant(new Timber.DebugTree());
             StethoUtil.initialize(this);
         }
+        //About Fabric.
         Fabric.with(this, new Crashlytics());
         Optimizely.startOptimizelyWithAPIToken(getString(R.string.com_optimizely_api_key), this);
+
+        //Initialize the singleton of Api.
         Api.setup(this);
+        //Initialize the info of locale.
         sLocales = ConfigurationUtil.getLocales(getResources().getConfiguration());
         sPrimaryLanguage = LocaleUtil.getLanguage(sLocales[0]);
+        //Create the sync account.
+        AccountUtil.createSyncAccount(this);
     }
 
     @Override
