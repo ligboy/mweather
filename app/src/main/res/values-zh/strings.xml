@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">材料天气</string>
+    <string name="action_settings">设置</string>
+    <string name="action_search">搜索</string>
+    <string name="main_page_title_tomorrow">明天</string>
+    <string name="main_page_title_now">实时</string>
+    <string name="main_page_title_week">一周内</string>
+    <string name="navigation_drawer_close">关闭导航抽屉</string>
+    <string name="navigation_drawer_open">打开导航抽屉</string>
+    <string name="now_humidity">湿度 %1$s</string>
+    <string name="now_wind_direction_east">东风</string>
+    <string name="now_wind_direction_north">北风</string>
+    <string name="now_wind_direction_north_east">东北风</string>
+    <string name="now_wind_direction_north_west">西北风</string>
+    <string name="now_wind_direction_south">南风</string>
+    <string name="now_wind_direction_south_east">东南风</string>
+    <string name="now_wind_direction_south_west">西南风</string>
+    <string name="now_wind_direction_west">西风</string>
+
+    <string name="now_wind_level_calm">无风</string>
+    <string name="now_wind_level_light_air">软风</string>
+    <string name="now_wind_level_light">轻风</string>
+    <string name="now_wind_level_gentle">微风</string>
+    <string name="now_wind_level_moderate">和风</string>
+    <string name="now_wind_level_fresh">劲风</string>
+    <string name="now_wind_level_strong">强风</string>
+    <string name="now_wind_level_near_gale">疾风</string>
+    <string name="now_wind_level_gale">大风</string>
+    <string name="now_wind_level_strong_gale">烈风</string>
+    <string name="now_wind_level_violent_storm">暴风</string>
+    <string name="now_wind_level_storm">狂风</string>
+    <string name="now_wind_level_hurricane">飓风</string>
+    <string name="weather_condition_clear_day">晴天</string>
+    <string name="weather_condition_clear_night">晴夜</string>
+    <string name="weather_condition_cloudy">阴天</string>
+    <string name="weather_condition_fog">雾</string>
+    <string name="weather_condition_haze">霾</string>
+    <string name="weather_condition_partly_cloudy_day">多云</string>
+    <string name="weather_condition_partly_cloudy_night">多云</string>
+    <string name="weather_condition_rain">雨</string>
+    <string name="weather_condition_sleet">冻雨</string>
+    <string name="weather_condition_snow">雪</string>
+    <string name="weather_condition_windy">风</string>
+    <string name="weather_condition_unknown">未知</string>
+    <string name="now_update_time_description">更新时间</string>
+</resources>

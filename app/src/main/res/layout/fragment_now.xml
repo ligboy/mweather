@@ -18,4 +18,11 @@
             </LinearLayout>
         </android.support.v4.widget.NestedScrollView>
     </android.support.v4.widget.SwipeRefreshLayout>
+    <android.support.v4.widget.ContentLoadingProgressBar
+        android:id="@+id/loadingProgress"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:visibility="gone"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_gravity="center"/>
 </FrameLayout>

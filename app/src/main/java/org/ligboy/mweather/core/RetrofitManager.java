@@ -42,7 +42,7 @@ public class RetrofitManager {
 
     {
         HTTP_CLIENT_BUILDER = new OkHttpClient.Builder();
-        if (org.ligboy.library.stetho.BuildConfig.DEBUG) {
+        if (BuildConfig.DEBUG) {
             HTTP_CLIENT_BUILDER.addInterceptor(new HttpLoggingInterceptor(new Logger() {
                 @Override
                 public void log(String message) {
@@ -84,6 +84,9 @@ public class RetrofitManager {
         mRetrofit = RETROFIT_BUILDER.client(HTTP_CLIENT_BUILDER.build()).build();
     }
 
+    private void init() {
+
+    }
     /**
      * set Retrofit's BaseUrl
      * <p/>Create a new Retrofit instance.

@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName;
 import org.ligboy.mweather.api.util.CyDate;
 
 /**
- * Wind
+ * WindLevel
  * @author Ligboy Liu ligboy@gmail.com
  */
 public class Wind implements Parcelable {

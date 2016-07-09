@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="caiyun_api_base" translatable="false">https://api.caiyunapp.com/</string>
+    <string name="caiyun_base" translatable="false">https://www.caiyunapp.com/</string>
+    <string name="caiyun_token" translatable="false">Y2FpeXVuIGFuZHJpb2QgYXBp</string>
+</resources>

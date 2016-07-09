@@ -10,7 +10,7 @@ import com.google.gson.annotations.SerializedName;
  */
 public class RealTime implements Parcelable {
     @SerializedName("temperature")
-    public float temperature;
+    public int temperature;
 
     @SerializedName("skycon")
     public String skyCondition;
@@ -34,7 +34,7 @@ public class RealTime implements Parcelable {
     public Wind wind;
 
     protected RealTime(Parcel in) {
-        temperature = in.readFloat();
+        temperature = in.readInt();
         skyCondition = in.readString();
         cloudRate = in.readFloat();
         airQualityIndex = in.readInt();
@@ -46,7 +46,7 @@ public class RealTime implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeFloat(temperature);
+        dest.writeInt(temperature);
         dest.writeString(skyCondition);
         dest.writeFloat(cloudRate);
         dest.writeInt(airQualityIndex);

@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import com.google.gson.annotations.SerializedName;
 
 /**
- * Wind
+ * WindLevel
  * @author Ligboy Liu ligboy@gmail.com
  */
 public class Wind implements Parcelable {

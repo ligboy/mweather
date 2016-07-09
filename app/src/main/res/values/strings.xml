@@ -12,5 +12,45 @@
     <string name="main_page_title_week">Week</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="now_humidity">Humidity %1$s</string>
+    <string name="now_wind_speed" translatable="false">%1$.0f km/h</string>
+
+
+    <string name="now_wind_direction_north">"North"</string>
+    <string name="now_wind_direction_north_east">"North East"</string>
+    <string name="now_wind_direction_east">"East"</string>
+    <string name="now_wind_direction_south_east">"South East"</string>
+    <string name="now_wind_direction_south">"South"</string>
+    <string name="now_wind_direction_south_west">"South West"</string>
+    <string name="now_wind_direction_west">"West"</string>
+    <string name="now_wind_direction_north_west">"North West"</string>
+
+    <string name="now_wind_level_calm">Clam</string>
+    <string name="now_wind_level_light_air">Light air</string>
+    <string name="now_wind_level_light">Light breeze</string>
+    <string name="now_wind_level_gentle">Gentle breeze</string>
+    <string name="now_wind_level_moderate">Moderate breeze</string>
+    <string name="now_wind_level_fresh">Fresh breeze</string>
+    <string name="now_wind_level_strong">Strong breeze</string>
+    <string name="now_wind_level_near_gale">Near gale</string>
+    <string name="now_wind_level_gale">Gale</string>
+    <string name="now_wind_level_strong_gale">Strong gale</string>
+    <string name="now_wind_level_storm">Storm</string>
+    <string name="now_wind_level_violent_storm">Violent storm</string>
+    <string name="now_wind_level_hurricane">Hurricane</string>
+
+    <string name="weather_condition_clear_day">Clear</string>
+    <string name="weather_condition_clear_night">Clear</string>
+    <string name="weather_condition_partly_cloudy_day">Partly Cloudy</string>
+    <string name="weather_condition_partly_cloudy_night">Partly Cloudy</string>
+    <string name="weather_condition_cloudy">Cloudy</string>
+    <string name="weather_condition_rain">Rain</string>
+    <string name="weather_condition_sleet">Sleet</string>
+    <string name="weather_condition_snow">Snow</string>
+    <string name="weather_condition_windy">Windy</string>
+    <string name="weather_condition_fog">Foggy</string>
+    <string name="weather_condition_haze">Haze</string>
+    <string name="weather_condition_unknown">Unknown</string>
+    <string name="now_update_time_description">Update Time</string>
 </resources>
