@@ -17,10 +17,10 @@ import org.ligboy.mweather.R;
 import org.ligboy.mweather.api.loader.RealTimeLoader;
 import org.ligboy.mweather.common.Weather;
 import org.ligboy.mweather.common.WindDirection;
+import org.ligboy.mweather.common.WindLevel;
 import org.ligboy.mweather.model.RealTimeResult;
 import org.ligboy.mweather.model.realtime.RealTime;
 import org.ligboy.mweather.model.realtime.Wind;
-import org.ligboy.mweather.util.wind.WindLevel;
 
 import java.text.NumberFormat;
 
@@ -132,13 +132,13 @@ public class NowFragment extends Fragment {
 
                     mWindSpeedView.setText(getString(R.string.now_wind_speed, wind.speed));
                     mWindIndicatorView.setRotation(wind.direction + 180);
-                    int level = WindLevel.beaufort(wind.speed);
-                    if (level > WindLevel.CALM) {
+                    WindLevel level = WindLevel.beaufortValueOf(wind.speed);
+                    if (level != WindLevel.CALM) {
                         StringBuilder stringBuilder = new StringBuilder();
                         WindDirection windDirection = WindDirection.valueOf(wind.speed);
                         stringBuilder.append(getString(windDirection.getNameRes()));
                         stringBuilder.append(' ');
-                        stringBuilder.append(getString(WindLevel.name(level))).append(' ');
+                        stringBuilder.append(getString(level.getNameRes())).append(' ');
                         mWindLabelView.setText(stringBuilder.toString());
                     } else {
                         mWindLabelView.setText(R.string.now_wind_level_calm);

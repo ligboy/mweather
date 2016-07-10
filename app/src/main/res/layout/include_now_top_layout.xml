@@ -32,7 +32,7 @@
             app:layout_constraintLeft_toLeftOf="@+id/top_layout"
             android:layout_marginLeft="32dp"
             android:layout_marginStart="32dp"
-            app:layout_constraintTop_toBottomOf="@+id/temperatureDay"
+            app:layout_constraintTop_toBottomOf="@+id/pm25"
             android:layout_marginTop="8dp" />
 
         <android.support.v7.widget.AppCompatTextView
@@ -50,11 +50,11 @@
             android:layout_marginTop="8dp" />
 
         <android.support.v7.widget.AppCompatTextView
-            android:id="@+id/temperatureDay"
+            android:id="@+id/pm25"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="?android:attr/textColorPrimary"
-            tools:text="Day 33°↑ ‧ Night 26°↓"
+            tools:text="PM2.5 25 良好"
             android:textSize="14sp"
             app:layout_constraintLeft_toLeftOf="@+id/temperature"
             app:layout_constraintTop_toTopOf="@+id/top_layout"
