@@ -51,6 +51,7 @@ public class WApplication extends Application {
         sPrimaryLanguage = LocaleUtil.getLanguage(sLocales[0]);
         //Create the sync account.
         AccountUtil.createSyncAccount(this);
+
     }
 
     @Override

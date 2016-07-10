@@ -13,7 +13,7 @@ import static android.content.Context.ACCOUNT_SERVICE;
  */
 public final class AccountUtil {
     // The account name
-    private static final String ACCOUNT = "dummyaccount";
+    public static final String ACCOUNT_NAME = "Default";
 
     private AccountUtil() {
         throw new IllegalAccessError();
@@ -27,7 +27,7 @@ public final class AccountUtil {
     public static Account createSyncAccount(Context context) {
         // Create the account type and default account
         Account newAccount = new Account(
-                ACCOUNT, context.getString(R.string.account_type));
+                ACCOUNT_NAME, context.getString(R.string.account_type));
         // Get an instance of the Android account manager
         AccountManager accountManager =
                 (AccountManager) context.getSystemService(
