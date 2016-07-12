@@ -87,8 +87,11 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (mLocationClient != null && mLocationClient.isStarted()) {
-            mLocationClient.stopLocation();
+        if (mLocationClient != null) {
+            if (mLocationClient.isStarted()) {
+                mLocationClient.stopLocation();
+            }
+            mLocationClient.onDestroy();
         }
     }
 
