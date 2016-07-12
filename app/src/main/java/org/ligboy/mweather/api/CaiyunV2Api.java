@@ -4,7 +4,7 @@ package org.ligboy.mweather.api;
 import android.support.annotation.Nullable;
 
 import org.ligboy.mweather.model.ForecastResult;
-import org.ligboy.mweather.model.GeoentryResult;
+import org.ligboy.mweather.model.GeonetryResult;
 import org.ligboy.mweather.model.RealTimeResult;
 
 import retrofit2.Call;
@@ -27,7 +27,7 @@ public interface CaiyunV2Api {
                                   @Nullable @Query("lang") String language);
 
     @GET("/v2/geoentry/{lang}/{lonlat}")
-    Call<GeoentryResult> pm25(@Path("lonlat") String lonlat, @Path("lang") String language);
+    Call<GeonetryResult> pm25(@Path("lonlat") String lonlat, @Path("lang") String language);
 
 
 }

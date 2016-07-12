@@ -4,8 +4,10 @@ import android.animation.ArgbEvaluator;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.NavigationView.OnNavigationItemSelectedListener;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
@@ -17,15 +19,33 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.amap.api.location.AMapLocation;
+import com.amap.api.location.AMapLocationClient;
+import com.amap.api.location.AMapLocationClientOption;
+import com.amap.api.location.AMapLocationListener;
+
 import org.ligboy.mweather.R;
 import org.ligboy.mweather.adapter.MainPageAdapter;
 
+import java.util.List;
+
+import pub.devrel.easypermissions.EasyPermissions;
+import pub.devrel.easypermissions.EasyPermissions.PermissionCallbacks;
+import timber.log.Timber;
+
+import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements OnNavigationItemSelectedListener, PermissionCallbacks {
+
+    private static final int REQUEST_CODE_LOCATION = 124;
 
     private CoordinatorLayout mContentLayout;
     private ViewPager mViewPager;
     private TabLayout mTabLayout;
+
+    public AMapLocationClient mLocationClient;
 
     private final ArgbEvaluator mColorEvaluator = new ArgbEvaluator();
 
@@ -40,6 +60,7 @@ public class MainActivity extends AppCompatActivity
         mTabLayout = (TabLayout) findViewById(R.id.tabLayout);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        setTitle(null);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -59,6 +80,16 @@ public class MainActivity extends AppCompatActivity
 
             }
         });
+        initLocation();
+        startLocation();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mLocationClient != null && mLocationClient.isStarted()) {
+            mLocationClient.stopLocation();
+        }
     }
 
     @Override
@@ -136,5 +167,55 @@ public class MainActivity extends AppCompatActivity
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setStatusBarColor(color);
         }
+    }
+
+    private void initLocation() {
+        AMapLocationClientOption option = new AMapLocationClientOption();
+        option.setLocationCacheEnable(true);
+//        option.setNeedAddress(true);
+        option.setOnceLocation(true);
+        option.setOnceLocationLatest(true);
+        option.setKillProcess(true);
+        mLocationClient = new AMapLocationClient(getApplicationContext());
+        mLocationClient.setLocationOption(option);
+        mLocationClient.setLocationListener(new AMapLocationListener() {
+            @Override
+            public void onLocationChanged(AMapLocation aMapLocation) {
+                if (aMapLocation != null) {
+                    Timber.d(aMapLocation.toStr());
+                    if (aMapLocation.getErrorCode() == 0) {
+                        setTitle(aMapLocation.getDistrict() + aMapLocation.getStreet()
+                                + aMapLocation.getStreetNum());
+                    }
+
+                }
+            }
+        });
+    }
+
+    private void startLocation() {
+        if (EasyPermissions.hasPermissions(this, ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION)) {
+            mLocationClient.startLocation();
+        } else {
+            EasyPermissions.requestPermissions(this, getString(R.string.location_rationale),
+                    REQUEST_CODE_LOCATION, ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+
+    @Override
+    public void onPermissionsGranted(int requestCode, List<String> perms) {
+        startLocation();
+    }
+
+    @Override
+    public void onPermissionsDenied(int requestCode, List<String> perms) {
+
     }
 }

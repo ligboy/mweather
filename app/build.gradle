@@ -7,6 +7,14 @@ android {
     compileSdkVersion 24
     buildToolsVersion "24.0.0"
     defaultConfig {
+        signingConfigs {
+            debug {
+                keyAlias 'Debug'
+                keyPassword '123456'
+                storeFile file('../key/debug.jks')
+                storePassword '123456'
+            }
+        }
         applicationId "org.ligboy.mweather"
         minSdkVersion 15
         targetSdkVersion 24
@@ -25,6 +33,7 @@ android {
         }
         debug {
             applicationIdSuffix '.debug'
+            signingConfig signingConfigs.debug
         }
     }
     productFlavors {
@@ -107,6 +116,7 @@ dependencies {
     compile 'com.jakewharton.timber:timber:4.1.2'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha3'
     compile 'com.dmitrymalkovich.android:material-design-dimens:1.2'
+    compile 'pub.devrel:easypermissions:0.1.9@aar'
 
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'

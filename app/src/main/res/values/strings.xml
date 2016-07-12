@@ -53,4 +53,5 @@
     <string name="weather_condition_haze">Haze</string>
     <string name="weather_condition_unknown">Unknown</string>
     <string name="now_update_time_description">Update Time</string>
+    <string name="location_rationale">This app needs access to location service so you can see the weather in your current location.</string>
 </resources>

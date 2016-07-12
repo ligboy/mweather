@@ -9,15 +9,15 @@ import com.google.gson.annotations.SerializedName;
  * @author Ligboy.Liu ligboy@gmail.com.
  */
 
-public class GeoentryResult extends BaseResult implements Parcelable {
+public class GeonetryResult extends BaseResult implements Parcelable {
 
     @SerializedName("placeName")
     public String placeName;
 
-    public GeoentryResult() {
+    public GeonetryResult() {
     }
 
-    protected GeoentryResult(Parcel in) {
+    protected GeonetryResult(Parcel in) {
         super(in);
         placeName = in.readString();
     }
@@ -33,15 +33,15 @@ public class GeoentryResult extends BaseResult implements Parcelable {
         return 0;
     }
 
-    public static final Creator<GeoentryResult> CREATOR = new Creator<GeoentryResult>() {
+    public static final Creator<GeonetryResult> CREATOR = new Creator<GeonetryResult>() {
         @Override
-        public GeoentryResult createFromParcel(Parcel in) {
-            return new GeoentryResult(in);
+        public GeonetryResult createFromParcel(Parcel in) {
+            return new GeonetryResult(in);
         }
 
         @Override
-        public GeoentryResult[] newArray(int size) {
-            return new GeoentryResult[size];
+        public GeonetryResult[] newArray(int size) {
+            return new GeonetryResult[size];
         }
     };
 }
