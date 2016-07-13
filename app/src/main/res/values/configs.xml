@@ -6,5 +6,6 @@
     <string name="caiyun_token" translatable="false">Y2FpeXVuIGFuZHJpb2QgYXBp</string>
     <string name="account_type" translatable="false">org.ligboy.mweather</string>
     <string name="weather_provider_authorities" translatable="false">org.ligboy.mweather.provider.weather</string>
+    <string name="location_suggestions_provider_authorities" translatable="false">org.ligboy.mweather.provider.LocationSuggestions</string>
     <string name="amap_lbs_api_key" translatable="false">0943b621f657a0f4bc68a0c804271f95</string>
 </resources>

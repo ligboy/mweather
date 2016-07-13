@@ -1,6 +1,7 @@
 package org.ligboy.mweather.ui;
 
 import android.animation.ArgbEvaluator;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
@@ -121,6 +122,7 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_search) {
+            startActivity(new Intent(this, LocationActivity.class));
             return true;
         }
 

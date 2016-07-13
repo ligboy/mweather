@@ -2,5 +2,6 @@
 <resources>
     <string name="account_type" translatable="false">org.ligboy.mweather.debug</string>
     <string name="weather_provider_authorities" translatable="false">org.ligboy.mweather.debug.provider.weather</string>
+    <string name="location_suggestions_provider_authorities" translatable="false">org.ligboy.mweather.debug.provider.LocationSuggestions</string>
     <string name="amap_lbs_api_key" translatable="false">c3d2f13ada843e0c89af2f3411c1ac68</string>
 </resources>
