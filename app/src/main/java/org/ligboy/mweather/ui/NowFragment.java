@@ -135,7 +135,7 @@ public class NowFragment extends Fragment {
                     WindLevel level = WindLevel.beaufortValueOf(wind.speed);
                     if (level != WindLevel.CALM) {
                         StringBuilder stringBuilder = new StringBuilder();
-                        WindDirection windDirection = WindDirection.valueOf(wind.speed);
+                        WindDirection windDirection = WindDirection.valueOf(wind.direction);
                         stringBuilder.append(getString(windDirection.getNameRes()));
                         stringBuilder.append(' ');
                         stringBuilder.append(getString(level.getNameRes())).append(' ');
