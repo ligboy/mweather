@@ -5,7 +5,16 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.net.Uri;
 
-public class LocationSuggestionsProvider extends ContentProvider {
+import com.amap.api.services.help.Inputtips;
+import com.amap.api.services.help.Inputtips.InputtipsListener;
+import com.amap.api.services.help.Tip;
+
+import java.util.List;
+
+public class LocationSuggestionsProvider extends ContentProvider implements InputtipsListener {
+
+    private Inputtips mInputtips;
+
     public LocationSuggestionsProvider() {
     }
 
@@ -30,14 +39,19 @@ public class LocationSuggestionsProvider extends ContentProvider {
 
     @Override
     public boolean onCreate() {
-        // TODO: Implement this to initialize your content provider on startup.
-        return false;
+        mInputtips = new Inputtips(getContext(), this);
+        return true;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
     @Override
     public Cursor query(Uri uri, String[] projection, String selection,
                         String[] selectionArgs, String sortOrder) {
-        // TODO: Implement this to handle query requests from clients.
+        mInputtips.requestInputtipsAsyn();
         throw new UnsupportedOperationException("Not yet implemented");
     }
 
@@ -46,5 +60,10 @@ public class LocationSuggestionsProvider extends ContentProvider {
                       String[] selectionArgs) {
         // TODO: Implement this to handle requests to update one or more rows.
         throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    @Override
+    public void onGetInputtips(List<Tip> list, int i) {
+
     }
 }

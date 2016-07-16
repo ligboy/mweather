@@ -26,6 +26,9 @@
             android:name="com.amap.api.v2.apikey"
             android:value="@string/amap_lbs_api_key" />
 
+        <meta-data android:name="android.app.default_searchable"
+            android:value=".ui.LocationActivity" />
+
         <activity
             android:name=".ui.LauncherActivity"
             android:label="@string/app_name"
@@ -84,11 +87,6 @@
                 android:name="android.content.SyncAdapter"
                 android:resource="@xml/sync_adapter" />
         </service>
-
-        <activity
-            android:name=".ui.LocationActivity"
-            android:label=""
-            android:theme="@style/AppTheme.Location" />
 
         <provider
             android:name=".provider.LocationSuggestionsProvider"

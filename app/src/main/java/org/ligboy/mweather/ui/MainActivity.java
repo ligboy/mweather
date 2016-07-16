@@ -1,7 +1,6 @@
 package org.ligboy.mweather.ui;
 
 import android.animation.ArgbEvaluator;
-import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,11 +12,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import com.amap.api.location.AMapLocation;
@@ -37,7 +32,7 @@ import timber.log.Timber;
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends BaseActivity
         implements OnNavigationItemSelectedListener, PermissionCallbacks {
 
     private static final int REQUEST_CODE_LOCATION = 124;
@@ -59,15 +54,9 @@ public class MainActivity extends AppCompatActivity
         mContentLayout = (CoordinatorLayout) findViewById(R.id.coordinatorLayout);
         mViewPager = (ViewPager) findViewById(R.id.viewPager);
         mTabLayout = (TabLayout) findViewById(R.id.tabLayout);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        setTitle(null);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
+        setupSearchView();
+        setupDrawer();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -104,29 +93,6 @@ public class MainActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_search) {
-            startActivity(new Intent(this, LocationActivity.class));
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -189,7 +155,7 @@ public class MainActivity extends AppCompatActivity
                 if (aMapLocation != null) {
                     Timber.d(aMapLocation.toStr());
                     if (aMapLocation.getErrorCode() == 0) {
-                        setTitle(aMapLocation.getDistrict() + aMapLocation.getStreet()
+                        mSearchView.setQuery(aMapLocation.getDistrict() + aMapLocation.getStreet()
                                 + aMapLocation.getStreetNum());
                     }
 

@@ -25,18 +25,7 @@
             android:theme="@style/AppTheme.AppBarOverlay"
             android:background="?attr/colorPrimary"
             android:gravity="center_horizontal|top">
-
             <include layout="@layout/include_app_bar_main" />
-
-            <android.support.design.widget.TabLayout
-                android:id="@+id/tabLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:tabMode="fixed"
-                app:tabGravity="fill"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="56dp"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
         </android.support.design.widget.AppBarLayout>
 
         <!--<android.support.design.widget.FloatingActionButton-->

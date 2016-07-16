@@ -13,6 +13,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <com.lapism.searchview.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:search_clear_on_close="false"
+        app:search_clear_on_open="true"
+        style="@style/LocationSearchView"/>
+
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"

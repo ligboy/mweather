@@ -118,6 +118,7 @@ dependencies {
     compile 'com.jakewharton.timber:timber:4.1.2'
     compile 'com.dmitrymalkovich.android:material-design-dimens:1.2'
     compile 'pub.devrel:easypermissions:0.1.9@aar'
+    compile 'com.lapism:searchview:3.4'
 
     testCompile "com.squareup.okhttp3:mockwebserver:${okhttpVersion}"
     androidTestCompile "com.squareup.okhttp3:mockwebserver:${okhttpVersion}"
