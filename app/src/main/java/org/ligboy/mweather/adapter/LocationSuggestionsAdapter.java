@@ -10,8 +10,8 @@ import com.amap.api.services.help.Inputtips;
 import com.amap.api.services.help.Inputtips.InputtipsListener;
 import com.amap.api.services.help.InputtipsQuery;
 import com.amap.api.services.help.Tip;
-import com.lapism.searchview.SearchAdapter;
-import com.lapism.searchview.SearchItem;
+import org.ligboy.android.searchview.SearchAdapter;
+import org.ligboy.android.searchview.SearchItem;
 
 import org.ligboy.mweather.R;
 

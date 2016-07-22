@@ -66,7 +66,7 @@ allprojects {
 }
 
 ext {
-    supportVersion = '24.0.0'
+    supportVersion = '24.1.0'
     retrofitVersion = '2.1.0'
     okhttpVersion = '3.3.1'
     gsonVersion = '2.6.1'
@@ -78,7 +78,7 @@ configurations.all {
             "com.android.support:support-annotations:${supportVersion}",
             "com.android.support:appcompat-v7:${supportVersion}",
             "com.android.support:support-v4:${supportVersion}",
-//            "com.android.support:recyclerview-v7:${supportVersion}",
+            "com.android.support:recyclerview-v7:${supportVersion}",
             "com.android.support:design:${supportVersion}",
             "com.google.code.gson:gson:${gsonVersion}"
     ]
@@ -118,7 +118,7 @@ dependencies {
     compile 'com.jakewharton.timber:timber:4.1.2'
     compile 'com.dmitrymalkovich.android:material-design-dimens:1.2'
     compile 'pub.devrel:easypermissions:0.1.9@aar'
-    compile 'com.lapism:searchview:3.4'
+    compile project(':searchview')
 
     testCompile "com.squareup.okhttp3:mockwebserver:${okhttpVersion}"
     androidTestCompile "com.squareup.okhttp3:mockwebserver:${okhttpVersion}"

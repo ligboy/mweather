@@ -10,10 +10,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
-import com.lapism.searchview.SearchAdapter;
-import com.lapism.searchview.SearchHistoryTable;
-import com.lapism.searchview.SearchItem;
-import com.lapism.searchview.SearchView;
+import org.ligboy.android.searchview.SearchAdapter;
+import org.ligboy.android.searchview.SearchHistoryTable;
+import org.ligboy.android.searchview.SearchItem;
+import org.ligboy.android.searchview.SearchView;
 
 import org.ligboy.mweather.R;
 import org.ligboy.mweather.adapter.LocationSuggestionsAdapter;
